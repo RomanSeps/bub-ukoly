@@ -1,0 +1,285 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+
+
+
+/* Hi there, so this is my blackjack project, I'm just starting out, and this is my first bigger project, anyways
+ if you wanna start the game just put a bet and it will start, I don't know about any way to make the program 
+ slower or how to put any input in Sololearn, so it just prints 2 random cards for both and then writes who won,
+ anyways I hope you enjoy it and have a nice day :) */
+
+
+int main() {
+    int bets;
+    scanf("%d", &bets);
+    int ACardCounter = 0;
+    time_t t;
+    srand((unsigned) time(&t));
+    int Score1 = 0;
+    //dealer's part
+    for(int i = 0; i < 2; i++){
+        
+        int suit1 = rand() %4 + 1; //picks a random suit for the card
+        int Card1 = rand() % 14 + 1; //picks a random number from 1 to 14
+        
+        if(Card1 == 14){ //if it picks 14 - it changes into A
+            
+            if(ACardCounter < 1){ //This choose either to make the A count for 11 or 1
+                Score1 += 11;
+                printf("A ");
+                ACardCounter += 1;
+                if(suit1 == 1){
+                    printf("(H) ");
+        }
+            else if(suit1 == 2){
+                printf("(D) ");
+        }
+            else if(suit1 == 3){
+                printf("(C) ");
+        }
+            else if(suit1 == 4){
+                printf("(S) ");
+        }
+            continue;
+            }else
+            {
+            Score1 += 1;
+            printf("A ");
+            ACardCounter += 1;
+                if(suit1 == 1){
+                    printf("(H) ");
+        }
+            else if(suit1 == 2){
+                printf("(D) ");
+        }
+            else if(suit1 == 3){
+                printf("(C) ");
+        }
+            else if(suit1 == 4){
+                printf("(S) ");
+        }
+            continue;
+            }
+        }
+        else if(Card1 == 13){ //if it picks 13 it changes into K
+            Score1 += 10;
+            printf("K ");
+                if(suit1 == 1){
+                    printf("(H) ");
+        }
+            else if(suit1 == 2){
+                printf("(D) ");
+        }
+            else if(suit1 == 3){
+                printf("(C) ");
+        }
+            else if(suit1 == 4){
+                printf("(S) ");
+        }
+            continue;
+        }
+        else if(Card1 == 12){ //if it picks 12 it changes into Q
+            Score1 += 10;
+            printf("Q ");
+                if(suit1 == 1){
+                    printf("(H) ");
+        }
+            else if(suit1 == 2){
+                printf("(D) ");
+        }
+            else if(suit1 == 3){
+                printf("(C) ");
+        }
+            else if(suit1 == 4){
+                printf("(S) ");
+        }
+            continue;
+        }
+        else if(Card1 == 11){ //and if it picks 11 it changes into J
+            Score1 += 10;
+            printf("J ");
+                if(suit1 == 1){
+                    printf("(H) ");
+        }
+            else if(suit1 == 2){
+                printf("(D) ");
+        }
+            else if(suit1 == 3){
+                printf("(C) ");
+        }
+            else if(suit1 == 4){
+                printf("(S) ");
+        }
+            continue;
+        }
+        Score1 += Card1;
+        printf("%d ", Card1);
+        if(suit1 == 1){
+            printf("(H) ");
+        }
+        else if(suit1 == 2){
+            printf("(D) ");
+        }
+        else if(suit1 == 3){
+            printf("(C) ");
+        }
+        else if(suit1 == 4){
+            printf("(S) ");
+        }
+
+        }
+    printf("\n dealer's score is %d \n \n", Score1);
+
+    //Player's part
+    int Score = 0;
+    for(int i = 0; i < 2; i++){
+        
+        int suit = rand() %4 + 1;
+        int Card = rand() % 14 + 1;
+        
+        if(Card == 14){ //if it picks 14 - it changes into A
+            
+            if(ACardCounter < 1){ //This choose either to make the A count for 11 or 1
+                Score1 += 11;
+                printf("A ");
+                ACardCounter += 1;
+                
+                if(suit == 1){
+                    printf("(H) ");
+        }
+            else if(suit == 2){
+                printf("(D) ");
+        }
+            else if(suit == 3){
+                printf("(C) ");
+        }
+            else if(suit == 4){
+                printf("(S) ");
+        }
+            continue;
+            }else
+            {
+            Score1 += 1;
+            printf("A ");
+            ACardCounter += 1;
+                
+                if(suit == 1){
+                    printf("(H) ");
+        }
+            else if(suit == 2){
+                printf("(D) ");
+        }
+            else if(suit == 3){
+                printf("(C) ");
+        }
+            else if(suit == 4){
+                printf("(S) ");
+        }
+            continue;
+            }
+        }
+        
+        
+        else if(Card == 13){
+            
+            
+            Score += 10;
+            printf("K ");
+                 
+                 if(suit == 1){
+                    printf("(H) ");
+        }
+            else if(suit == 2){
+                printf("(D) ");
+        }
+            else if(suit == 3){
+                printf("(C) ");
+        }
+            else if(suit == 4){
+                printf("(S) ");
+        }
+            continue;
+        }
+        
+        
+        
+        else if(Card == 12){
+            Score += 10;
+            printf("Q ");
+                
+                if(suit == 1){
+                    printf("(H) ");
+        }
+            else if(suit == 2){
+                printf("(D) ");
+        }
+            else if(suit == 3){
+                printf("(C) ");
+        }
+            else if(suit == 4){
+                printf("(S) ");
+        }
+            
+            continue;
+        }
+        
+        
+        
+        else if(Card == 11){
+            Score += 10;
+            printf("J ");
+                  if(suit == 1){
+                    printf("(H) ");
+        }
+            else if(suit == 2){
+                printf("(D) ");
+        }
+            else if(suit == 3){
+                printf("(C) ");
+        }
+            else if(suit == 4){
+                printf("(S) ");
+        }
+            continue;
+        }
+        
+        
+        
+        
+        Score += Card;
+        printf(" %d ", Card);
+        
+        
+        if(suit == 1){
+            printf("(H) ");
+        }
+        else if(suit == 2){
+            printf("(D) ");
+        }
+        else if(suit == 3){
+            printf("(C) ");
+        }
+        else if(suit == 4){
+            printf("(S) ");
+        }
+
+    }
+    int HitorStay;
+    bets *= 2;
+    
+    printf("\nyour score is %d", Score);
+    if(Score >= Score1 && Score <= 21){
+        printf("\n\nYOU WON THE GAME :)");
+        printf("\nAND YOU WON %d DOLLARS", bets);
+    }else{
+        printf("\n\nYOU LOST THE GAME :(");
+    }
+    if(ACardCounter == 2){
+        printf("\n BLACKJACK !!!");
+    }
+    return 0;
+}
+
+
